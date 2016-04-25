@@ -1,0 +1,23 @@
+%F(x)=sin((3*x^2)/(x^2+5))-((4*x^5)/cos(x))+6
+function k = secant(x0,x1)
+ x0=input('1 ile 10 arasında bir x0 giriniz : ');
+ x1=input('1 ile 10 arasında bir x1 giriniz : ');
+ x(1)=x0;
+ x(2)=x1;
+ hata=1;
+ i=2;
+ fprintf('i\t   Xi\t\t\t   %%Ea\n');
+  while hata>1e-7
+    if i<2000
+x(i+1)=x(i)-(((sin((3*x(i)^2)/(x(i)^2+5))-((4*x(i)^5)/cos(x(i)))+6)*(x(i-1)-x(i)))/((sin((3*x(i-1)^2)/
+  (x(i-1)^2+5))-((4*x(i-1)^5)/cos(x(i-1)))+6)-  (sin((3*x(i)^2)/(x(i)^2+5))-((4*x(i)^5)/cos(x(i)))+6)));
+  hata=abs((x(i+1)-x(i))/x(i+1));
+    fprintf('%d\t%f\t\t',i,x(i+1));
+      disp(hata);
+           i=i+1;
+    else
+         break;
+    end
+  end
+ fprintf('Bulunan Kök = %f\n',x(i));
+end
