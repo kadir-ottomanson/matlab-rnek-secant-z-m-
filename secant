@@ -11,7 +11,7 @@ function k = secant(x0,x1)
     if i<2000
 x(i+1)=x(i)-(((sin((3*x(i)^2)/(x(i)^2+5))-((4*x(i)^5)/cos(x(i)))+6)*(x(i-1)-x(i)))/((sin((3*x(i-1)^2)/
   (x(i-1)^2+5))-((4*x(i-1)^5)/cos(x(i-1)))+6)-  (sin((3*x(i)^2)/(x(i)^2+5))-((4*x(i)^5)/cos(x(i)))+6)));
-  hata=abs((x(i+1)-x(i))/x(i+1));
+  hata=abs((x(i+1)-x(i))/x(i+1))*100;
     fprintf('%d\t%f\t\t',i,x(i+1));
       disp(hata);
            i=i+1;
